@@ -1,0 +1,50 @@
+<h2 class="h1-responsive">Realizar venta</h2>
+<hr />
+
+<div class="container">
+  <form [formGroup]="saleForm" class="row justify-content-center">
+    <div class="col-sm-5">
+      <mdb-select
+        [outline]="true"
+        [options]="barbersOptions"
+        placeholder="Seleccione un barbero"
+        label="Barberos"
+        formControlName="barber"
+      ></mdb-select>
+    </div>
+    <div class="col-sm-5">
+      <mdb-select
+        [outline]="true"
+        [options]="servicesOptions"
+        placeholder="Seleccione un servicio"
+        label="Servicios"
+        formControlName="service"
+      ></mdb-select>
+    </div>
+  </form>
+</div>
+
+<hr />
+<div class="container" *ngIf="saleForm.status === 'VALID'">
+  <div class="row">
+    <div class="col-sm-8 justify-content-center">
+      <span>Atendido por: {{ barberSelected.name }}</span
+      ><br />
+      <span>Servicio prestado: {{ serviceSelected.title }}</span>
+    </div>
+    <div class="col-sm-4 justify-content-center">
+      <h2>{{ serviceSelected.price | currency }}</h2>
+    </div>
+  </div>
+  <hr />
+  <button
+    type="button"
+    mdbBtn
+    color="primary"
+    class="relative waves-light"
+    (click)="onSubmit()"
+    mdbWavesEffect
+  >
+    Guardar
+  </button>
+</div>

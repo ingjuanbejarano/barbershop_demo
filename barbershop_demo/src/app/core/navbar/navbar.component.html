@@ -1,0 +1,57 @@
+<!--Navbar-->
+<mdb-navbar
+  SideClass="navbar navbar-1 navbar-light red darken-3"
+  [containerInside]="false"
+>
+  <!-- Navbar brand -->
+  <mdb-navbar-brand
+    ><a class="navbar-brand" href="/">BarberSHOP demo</a></mdb-navbar-brand
+  >
+
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link waves-light"
+          routerLink="/sales/overall"
+          routerLinkActive="activo"
+          mdbWavesEffect
+          >Total del dia</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link waves-light"
+          routerLink="/sales/barberSale"
+          routerLinkActive="activo"
+          mdbWavesEffect
+          >Realizar venta</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link waves-light"
+          routerLink="/services"
+          routerLinkActive="activo"
+          mdbWavesEffect
+          >Servicios</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link waves-light"
+          routerLink="/barbers"
+          routerLinkActive="activo"
+          mdbWavesEffect
+          >Barberos</a
+        >
+      </li>
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+  <!-- <span class="sr-only">(current)</span> active -->
+</mdb-navbar>
+<!--/.Navbar-->

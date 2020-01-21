@@ -1,0 +1,8 @@
+<div *ngIf="loading; else loaded" class="contenedor-loader d-flex justify-content-center align-items-center">
+  <mdb-spinner spinnerType="big"></mdb-spinner>
+</div>
+
+<ng-template #loaded>
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+</ng-template>

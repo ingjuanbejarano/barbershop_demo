@@ -1,0 +1,37 @@
+<h2 class="h1-responsive">Barberos</h2>
+<hr />
+
+<button
+  mdbBtn
+  color="danger"
+  rounded="true"
+  outline="true"
+  (click)="openModal()"
+  mdbWavesEffect
+>
+  Agregar
+</button>
+
+<mdb-accordion [multiple]="true" *ngFor="let barber of barbers">
+  <mdb-accordion-item [collapsed]="true">
+    <mdb-accordion-item-head>{{ barber.name }}</mdb-accordion-item-head>
+    <mdb-accordion-item-body>
+      <div class="row">
+        <div class="col-sm-6">
+          <span><mdb-icon fab icon="amilia"></mdb-icon> {{barber.name}}</span>
+        </div>
+        <div class="col-sm-6">
+          <span><mdb-icon fas icon="address-card"></mdb-icon> {{barber.idNumber}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <span><mdb-icon fas icon="at"></mdb-icon> {{barber.email}}</span>
+        </div>
+        <div class="col-sm-6">
+          <span><mdb-icon fas icon="mobile-alt"></mdb-icon> {{barber.phoneNumber}}</span>
+        </div>
+      </div>
+    </mdb-accordion-item-body>
+  </mdb-accordion-item>
+</mdb-accordion>

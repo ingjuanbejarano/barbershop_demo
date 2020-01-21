@@ -1,0 +1,83 @@
+<div class="modal-header">
+  <button
+    type="button"
+    class="close pull-right"
+    aria-label="Close"
+    (click)="modalRef.hide()"
+  >
+    <span aria-hidden="true">×</span>
+  </button>
+  <h4 class="modal-title w-100" id="myModalLabel">Agregar barbero</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="barberForm" class="text-center" style="color: #757575;">
+    <div class="md-form">
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+        mdbInput
+      />
+      <label for="name"><mdb-icon fab icon="amilia"></mdb-icon> Nombre</label>
+      <mdb-error *ngIf="name.invalid && (name.dirty || name.touched)">Campo requerido</mdb-error>
+      <!-- <mdb-success *ngIf="title.valid && (title.dirty || title.touched)">Input valid</mdb-success> -->
+    </div>
+    <div class="md-form">
+      <input
+        type="number"
+        id="idNumber"
+        class="md-textarea form-control"
+        formControlName="idNumber"
+        mdbInput
+      />
+      <label for="idNumber"><mdb-icon fas icon="address-card"></mdb-icon> Cedula</label>
+      <mdb-error *ngIf="idNumber.invalid && (idNumber.dirty || idNumber.touched)">Campo requerido</mdb-error>
+    </div>
+    <div class="md-form">
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+        mdbInput
+      />
+      <label for="email"><mdb-icon fas icon="at"></mdb-icon> Correo electronico</label>
+    </div>
+    <div class="md-form">
+      <input
+        type="number"
+        id="phoneNumber"
+        class="form-control"
+        formControlName="phoneNumber"
+        mdbInput
+      />
+      <label for="phoneNumber"><mdb-icon fas icon="mobile-alt"></mdb-icon> Telefono</label>
+      <mdb-error *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">Campo requerido</mdb-error>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    mdbBtn
+    color="danger"
+    class="waves-light"
+    aria-label="Close"
+    (click)="modalRef.hide()"
+    mdbWavesEffect
+  >
+    Cerrar
+  </button>
+  <button
+    type="button"
+    mdbBtn
+    color="primary"
+    class="relative waves-light"
+    [disabled]="barberForm.status === 'INVALID'"
+    (click)="onSubmit()"
+    mdbWavesEffect
+  >
+    Guardar
+  </button>
+</div>

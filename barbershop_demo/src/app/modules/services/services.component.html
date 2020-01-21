@@ -1,0 +1,32 @@
+<h2 class="h1-responsive">Servicios</h2>
+<hr />
+
+<button
+  mdbBtn
+  color="danger"
+  rounded="true"
+  outline="true"
+  (click)="openModal()"
+  mdbWavesEffect
+>
+  Agregar
+</button>
+
+<mdb-accordion [multiple]="true" *ngFor="let service of services">
+  <mdb-accordion-item [collapsed]="true">
+    <mdb-accordion-item-head>{{ service.title }}</mdb-accordion-item-head>
+    <mdb-accordion-item-body>
+      <div class="row">
+        <div class="col-sm-9">
+          <p>{{ service.description }}</p>
+        </div>
+        <div class="col-sm-3">
+          <span
+            ><mdb-icon fas icon="dollar-sign"></mdb-icon> Precio:
+            {{ service.price | currency }}</span
+          >
+        </div>
+      </div>
+    </mdb-accordion-item-body>
+  </mdb-accordion-item>
+</mdb-accordion>
