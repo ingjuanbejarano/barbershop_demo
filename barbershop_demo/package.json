@@ -26,7 +26,7 @@
     "@fortawesome/fontawesome-free": "^5.6.3",
     "chart.js": "^2.5.0",
     "easy-pie-chart": "2.1.x",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "hammerjs": "^2.0.8",
     "ng-uikit-pro-standard": "git+https://oauth2:qNrQhmreSE4mNtAEiGzN@git.mdbootstrap.com/mdb/angular/ng-uikit-pro-standard.git",
     "path": "^0.12.7",
